@@ -1,24 +1,26 @@
-import Filters from "./components/Filters";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Rentals from "./components/Rentals";
+import MainScreen from "./components/MainScreen/MainScreen";
+import { BrowserRouter, Route, Switch  } from 'react-router-dom';
+import Property from "./components/Properties/Property";
 
 function App() {
   return (
-    <div className="">
-      {/* Navbar */}
-      <Navbar />
-      {/* Filters */}
-      <div className="sm:mx-6 md:mx-10 lg:mx-12 px-3">
-        <Filters />
-        {/* Rentals */}
-        <Rentals />
-      </div>
-
-      {/* Footer */}
-      <Footer />
-    </div>
-  );
+  <BrowserRouter>
+    <Switch>
+      <Route exact path='/'>
+        <MainScreen />
+      </Route>
+      <Route path='/property'>
+        <Property text={'PROPERTIES'}/>
+      </Route>
+      <Route path='/rooms'>
+        <Property text={'ROOMS'}/>
+      </Route>
+      <Route path='/contract'>
+        <Property text={'CONTRACT'}/>
+      </Route>
+    </Switch>
+  </BrowserRouter>
+  )
 }
 
 export default App;

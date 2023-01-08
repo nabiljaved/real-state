@@ -1,7 +1,7 @@
 import React from "react";
 
 import { BsStarFill } from "react-icons/bs";
-const Rental = ({ title, image, price }) => {
+const Rental = ({ title, image, price, text }) => {
   return (
     <div className="">
       <div className="relative">
